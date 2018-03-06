@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 super.onBindViewHolder(holder, position)
                 homeData?.recommend?.get(position).apply {
                     holder.setText(R.id.txt_oneplus_title, title as String)
-                    holder.getView<ImageView>(R.id.img_oneplus_logo)?.loadImage(extendDic?.image!!)
+                    holder.getView<ImageView>(R.id.img_oneplus_logo)?.loadImage(this!!.extendDic?.image!!)
                 }
             }
         }
