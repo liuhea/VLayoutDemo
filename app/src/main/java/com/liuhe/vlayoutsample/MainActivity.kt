@@ -90,8 +90,9 @@ class MainActivity : AppCompatActivity() {
             override fun onBindViewHolder(holder: BaseViewHolder, @SuppressLint("RecyclerView") position: Int) {
                 super.onBindViewHolder(holder, position)
                 homeData?.navigations?.get(position)?.title?.let { holder.setText(R.id.txt_navigation_desc, it) }
-                homeData?.navigations?.get(position)?.extendDic?.image?.let{
-                        holder.getView<ImageView>(viewId = R.id.img_navigation_logo)?.loadImage(it)}
+                homeData?.navigations?.get(position)?.extendDic?.image?.let {
+                    holder.getView<ImageView>(viewId = R.id.img_navigation_logo)?.loadImage(it)
+                }
             }
         }
     }
@@ -99,12 +100,12 @@ class MainActivity : AppCompatActivity() {
     private fun initOnePlus(): BaseDelegateAdapter {
         val onePlusNLayoutHelper = OnePlusNLayoutHelper()
         onePlusNLayoutHelper.setMargin(0, 0, 0, 0)
-        onePlusNLayoutHelper.setPadding(10, 20, 10, 10)
-        return object : BaseDelegateAdapter(this@MainActivity, onePlusNLayoutHelper, R.layout.item_home_oneplus, 4,3) {
+        onePlusNLayoutHelper.setPadding(10, 20, 10, 80)
+        return object : BaseDelegateAdapter(this@MainActivity, onePlusNLayoutHelper, R.layout.item_home_oneplus, 4, 3) {
             override fun onBindViewHolder(holder: BaseViewHolder, @SuppressLint("RecyclerView") position: Int) {
                 super.onBindViewHolder(holder, position)
                 homeData?.recommend?.get(position).apply {
-                    holder.setText(R.id.txt_oneplus_title, title as String)
+                    holder.setText(R.id.txt_oneplus_title, this!!.title)
                     holder.getView<ImageView>(R.id.img_oneplus_logo)?.loadImage(this!!.extendDic?.image!!)
                 }
             }
