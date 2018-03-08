@@ -1,0 +1,32 @@
+ext {
+    android = [
+            compileSdkVersion: 26,
+            minSdkVersion    : 18,
+            targetSdkVersion : 26,
+            supportSdkVersion: '26.1.0',
+            versionName      : "1.0.0",
+            versionCode      : 1000
+    ]
+
+    dependencies = [
+            junit           : 'junit:junit:4.12',
+            runner          : 'com.android.support.test:runner:1.0.1',
+            espresso        : 'com.android.support.test.espresso:espresso-core:3.0.1',
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            constraintLayout: 'com.android.support.constraint:constraint-layout:1.0.2',
+            appcompatV7     : "com.android.support:appcompat-v7:27.1.0",
+
+            //v-layout
+            vLayout         : 'com.alibaba.android:vlayout:1.2.11@aar',
+
+            //retrofit
+            retrofit        : 'com.squareup.retrofit2:retrofit:2.3.0',
+            convertGson     : 'com.squareup.retrofit2:converter-gson:2.3.0',
+
+            //glide
+            glide           : 'com.github.bumptech.glide:glide:4.6.1',
+            glideCompiler   : 'com.github.bumptech.glide:compiler:4.6.1',
+
+
+    ]
+}

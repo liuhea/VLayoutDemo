@@ -14,12 +14,10 @@ import com.alibaba.android.vlayout.layout.LinearLayoutHelper
 import com.alibaba.android.vlayout.layout.OnePlusNLayoutHelper
 import com.liuhe.vlayoutsample.adapter.BaseDelegateAdapter
 import com.liuhe.vlayoutsample.adapter.BaseViewHolder
-import com.liuhe.vlayoutsample.net.imageUrl
 import com.liuhe.vlayoutsample.utils.NetCallBack
 import com.liuhe.vlayoutsample.utils.getHomeData
 import com.liuhe.vlayoutsample.utils.loadImage
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_home_oneplus.*
 import java.util.*
 
 
@@ -51,9 +49,10 @@ class MainActivity : AppCompatActivity() {
     private fun initRcy() {
         var layoutManager = VirtualLayoutManager(this)
         val delegateAdapter = DelegateAdapter(layoutManager, true)
-
         rcy.layoutManager = layoutManager
         rcy.adapter = delegateAdapter
+
+
         delegateAdapter.setAdapters(getAdapters())
         rcy.recycledViewPool = viewPool
 
@@ -65,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         adapters.add(initBanner())
         adapters.add(initNavigation())
         adapters.add(initOnePlus())
+        adapters.add(initTitle("推荐套餐样板间"))
         return adapters
     }
 
@@ -108,6 +108,15 @@ class MainActivity : AppCompatActivity() {
                     holder.setText(R.id.txt_oneplus_title, this!!.title)
                     holder.getView<ImageView>(R.id.img_oneplus_logo)?.loadImage(this!!.extendDic?.image!!)
                 }
+            }
+        }
+    }
+
+    private fun initTitle(title: String): BaseDelegateAdapter {
+        return object : BaseDelegateAdapter(this@MainActivity, LinearLayoutHelper(), R.layout.item_home_title, 1, 4) {
+            override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
+                super.onBindViewHolder(holder, position)
+                holder.setText(R.id.txt_title_title, title)
             }
         }
     }

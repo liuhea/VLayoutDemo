@@ -46,4 +46,3 @@ fun getHomeData(netCallBack: NetCallBack<HomeData>) {
         }
     })
 }
-
