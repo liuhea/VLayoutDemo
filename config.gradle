@@ -4,7 +4,7 @@ ext {
             minSdkVersion    : 18,
             targetSdkVersion : 26,
             supportSdkVersion: '26.1.0',
-            versionName      : "1.0.0",
+            versionName      : '1.0.0',
             versionCode      : 1000
     ]
 
@@ -26,7 +26,5 @@ ext {
             //glide
             glide           : 'com.github.bumptech.glide:glide:4.6.1',
             glideCompiler   : 'com.github.bumptech.glide:compiler:4.6.1',
-
-
     ]
 }

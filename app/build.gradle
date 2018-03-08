@@ -33,13 +33,13 @@ dependencies {
     implementation rootProject.ext.dependencies.constraintLayout
 
     //v-layout
-    compile(rootProject.ext.dependencies.vLayout) {
+    implementation(rootProject.ext.dependencies.vLayout) {
         transitive = true
     }
 
     //retrofit
-    compile rootProject.ext.dependencies.retrofit
-    compile rootProject.ext.dependencies.convertGson
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.convertGson
 
     //glide
     implementation rootProject.ext.dependencies.glide
