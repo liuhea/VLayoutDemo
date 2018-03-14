@@ -14,10 +14,12 @@ import com.alibaba.android.vlayout.layout.LinearLayoutHelper
 import com.alibaba.android.vlayout.layout.OnePlusNLayoutHelper
 import com.liuhe.vlayoutsample.adapter.BaseDelegateAdapter
 import com.liuhe.vlayoutsample.adapter.BaseViewHolder
+import com.liuhe.vlayoutsample.ui.SecondActivity
 import com.liuhe.vlayoutsample.utils.NetCallBack
 import com.liuhe.vlayoutsample.utils.getHomeData
 import com.liuhe.vlayoutsample.utils.loadImage
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
 import java.util.*
 
 
@@ -32,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         testData()
 
+        btn_main_send.setOnClickListener({
+            EventBus.getDefault().postSticky("I'm from MainActivity")
+            SecondActivity.start(this)
+        })
     }
 
     private fun testData() {

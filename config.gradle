@@ -26,5 +26,9 @@ ext {
             //glide
             glide           : 'com.github.bumptech.glide:glide:4.6.1',
             glideCompiler   : 'com.github.bumptech.glide:compiler:4.6.1',
+
+            // EventBus3.x
+            eventBus        : 'org.greenrobot:eventbus:3.1.1'
+
     ]
 }

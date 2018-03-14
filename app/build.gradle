@@ -44,5 +44,8 @@ dependencies {
     //glide
     implementation rootProject.ext.dependencies.glide
     annotationProcessor rootProject.ext.dependencies.glideCompiler
+
+//    eventBus
+    implementation rootProject.ext.dependencies.eventBus
 }
 
